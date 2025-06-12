@@ -1,0 +1,16 @@
+{
+    "redirects": [
+      {
+        "source": "/(.*)",
+        "has": [
+          {
+            "type": "host",
+            "value": "portfolio-lp-nu.vercel.app"
+          }
+        ],
+        "destination": "https://www.hiro-web-create.com/$1",
+        "permanent": true
+      }
+    ]
+  }
+  
