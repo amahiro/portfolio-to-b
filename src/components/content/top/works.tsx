@@ -12,7 +12,7 @@ const works = [
     plan: "スタンダードプラン",
     lead: "メニューや効果が伝わる構成と、リラックス感のあるデザインで、来院数アップに貢献しました。",
     image: "/works/works1.jpg",
-    // url: "https://hogushi-ayus.com/",
+    url: "https://hogushi-ayus.com/",
   },
   // {
   //   title: "タピオカ店 コラボ商品LP",
