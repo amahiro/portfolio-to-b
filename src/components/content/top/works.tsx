@@ -14,13 +14,13 @@ const works = [
     image: "/works/works1.jpg",
     url: "https://hogushi-ayus.com/",
   },
-  // {
-  //   title: "タピオカ店 コラボ商品LP",
-  //   plan: "コーディング代行",
-  //   lead: "LPのコーディングを2日で仕上げ。パーフェクトピクセルで再現性高く、クオリティ重視の仕上がりに。",
-  //   image: "/works/works2.jpg",
-  //   url: "",
-  // },
+  {
+    title: "タピオカ店 コラボ商品LP",
+    plan: "コーディング代行",
+    lead: "LPのコーディングを2日で仕上げ。パーフェクトピクセルで再現性高く、クオリティ重視の仕上がりに。",
+    image: "/works/works2.jpg",
+    url: "",
+  },
   {
     title: "Web制作会社様 各プランのテンプレート1",
     plan: "スタンダードプラン",
@@ -34,6 +34,20 @@ const works = [
     lead: "サービスの魅力が伝わるレイアウトと、安心感を与えるカラー設計で仕上げました。",
     image: "/works/works4.jpg",
     url: "https://standard2-one.vercel.app/",
+  },
+  {
+    title: "Web制作会社様 各プランのテンプレート3",
+    plan: "スタンダードプラン",
+    lead: "2カラムのレイアウトを採用したテンプレート",
+    image: "/works/works5.png",
+    url: "https://standard3-five.vercel.app/",
+  },
+  {
+    title: "もみほぐしサロン様 採用サイト",
+    plan: "ライトプラン",
+    lead: "清潔感のあるデザインと、わかりやすい構成で制作しました。",
+    image: "/works/works6.png",
+    url: "https://www.hogushi-ayus.com/recruit/",
   },
 ];
 
@@ -74,7 +88,11 @@ export default function WorksSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: [0.4, 0, 0.2, 1], delay: index * 0.1 }}
+            transition={{
+              duration: 0.8,
+              ease: [0.4, 0, 0.2, 1],
+              delay: index * 0.1,
+            }}
             className={
               "bg-white rounded-md sm:rounded-2xl overflow-hidden border border-gray-200 group transition-colors duration-300" +
               (work.url ? " hover:bg-gray-50" : "")
@@ -143,4 +161,4 @@ export default function WorksSection() {
       </div>
     </SectionWrapper>
   );
-} 
+}
