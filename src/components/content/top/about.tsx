@@ -3,7 +3,6 @@ import { UserCircle } from "@phosphor-icons/react/dist/ssr";
 import SectionWrapper from "@/components/blocks/section-wrapper";
 import SectionHeading from "@/components/blocks/section-heading";
 
-
 const aboutContent = {
   greeting: {
     title: "ご覧いただきありがとうございます",
@@ -12,11 +11,11 @@ const aboutContent = {
       "Webサイト制作を主な業務として、デザイン、コーディングから実装まで一貫して対応させていただいております。",
       "日々の業務を通じて、新しい技術やフレームワークの学習を続けています。",
       "新しい環境でも、これまでの経験を活かし、チームの一員として貢献させていただきたいと考えております。",
-      "どうぞよろしくお願いいたします。"
+      "どうぞよろしくお願いいたします。",
     ],
   },
   image: {
-    src: "/top/about2.jpg",
+    src: "/top/about.jpg",
     alt: "写真",
   },
   qualifications: {
@@ -54,7 +53,7 @@ export default function AboutSection() {
       <div className="container mx-auto">
         <div className="mx-auto lg:flex">
           <div className="relative lg:w-1/2 lg:mx-6 w-full aspect-[16/9] rounded-2xl border-2 border-gray-200 overflow-hidden">
-            <Image 
+            <Image
               src={aboutContent.image.src}
               alt={aboutContent.image.alt}
               fill
@@ -71,7 +70,10 @@ export default function AboutSection() {
 
             <p className="max-w-lg mt-6 text-sm tracking-wider leading-relaxed">
               {aboutContent.greeting.text.map((line, index) => (
-                <span key={index} className={index !== 0 ? "block mt-4" : "block"}>
+                <span
+                  key={index}
+                  className={index !== 0 ? "block mt-4" : "block"}
+                >
                   {line}
                 </span>
               ))}
