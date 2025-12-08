@@ -2,12 +2,18 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { SITE_NAME, TEL, POST_CODE, ADDRESS, HOURS, HOLIDAY, INSTAGRAM_LINK } from "@/constants/site-info";
+import {
+  SITE_NAME,
+  TEL,
+  POST_CODE,
+  ADDRESS,
+  HOURS,
+  HOLIDAY,
+  INSTAGRAM_LINK,
+} from "@/constants/site-info";
 import { List, X } from "@phosphor-icons/react";
 import { NotePencil } from "@phosphor-icons/react";
-import {
-  InstagramLogo,
-} from "@phosphor-icons/react/dist/ssr";
+import { InstagramLogo } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import GradientButton from "@/components/ui/gradient-button";
 
@@ -43,14 +49,19 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={cn(
-      "fixed top-0 left-0 w-full z-50 transition-all duration-300",
-      isScrolled && "shadow-sm bg-white"
-    )}>
+    <header
+      className={cn(
+        "fixed top-0 left-0 w-full z-50 transition-all duration-300",
+        isScrolled && "shadow-sm bg-white"
+      )}
+    >
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-14 items-center justify-between">
           <h1 className="flex-1 md:flex md:items-center md:gap-12">
-            <Link href="/" className="font-bold block hover:opacity-70 transition">
+            <Link
+              href="/"
+              className="font-bold block hover:opacity-70 transition"
+            >
               {SITE_NAME}
             </Link>
           </h1>
@@ -61,9 +72,9 @@ export default function Header() {
                 {navItems.map((item) => (
                   <li key={item.href}>
                     {item.name === "ご予約・お問い合わせ" ? (
-                      <GradientButton 
-                        href={item.href} 
-                        className="rounded-sm py-0.5 bg-[#007ACC] hover:bg-[#005fa3] text-white border-none" 
+                      <GradientButton
+                        href={item.href}
+                        className="rounded-sm py-0.5 bg-[#007ACC] hover:bg-[#005fa3] text-white border-none"
                         icon={<NotePencil size={16} weight="bold" />}
                         isIconLeft
                         noIconAnimation
@@ -135,12 +146,19 @@ export default function Header() {
         <nav className="px-5 py-6">
           <ul className="space-y-3 text-sm">
             {navItems.map((item) => (
-              <li key={item.href} className={`${item.name !== "ご予約・お問い合わせ" ? "border-b border-gray-100" : ""} pb-3`}>
+              <li
+                key={item.href}
+                className={`${
+                  item.name !== "ご予約・お問い合わせ"
+                    ? "border-b border-gray-100"
+                    : ""
+                } pb-3`}
+              >
                 {item.name === "ご予約・お問い合わせ" ? (
                   <div onClick={() => setIsOpen(false)}>
-                    <GradientButton 
-                      href={item.href} 
-                      className="rounded-sm py-0.5 bg-[#007ACC] hover:bg-[#005fa3] text-white border-none justify-start" 
+                    <GradientButton
+                      href={item.href}
+                      className="rounded-sm py-0.5 bg-[#007ACC] hover:bg-[#005fa3] text-white border-none justify-start"
                       icon={<NotePencil size={16} weight="bold" />}
                       isIconLeft
                       noIconAnimation
@@ -162,7 +180,7 @@ export default function Header() {
             ))}
           </ul>
 
-          <div className="mt-4">
+          {/* <div className="mt-4">
             <div className="rounded-sm bg-gray-100">
               <div className="px-5 py-5">
                 <p className="text-xs tracking-wide text-gray-500 uppercase">
@@ -200,7 +218,7 @@ export default function Header() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </nav>
       </div>
     </header>
