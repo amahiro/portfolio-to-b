@@ -2,18 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import {
-  SITE_NAME,
-  TEL,
-  POST_CODE,
-  ADDRESS,
-  HOURS,
-  HOLIDAY,
-  INSTAGRAM_LINK,
-} from "@/constants/site-info";
+import { SITE_NAME } from "@/constants/site-info";
 import { List, X } from "@phosphor-icons/react";
 import { NotePencil } from "@phosphor-icons/react";
-import { InstagramLogo } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 import GradientButton from "@/components/ui/gradient-button";
 
@@ -27,12 +18,6 @@ const navItems = [
   // { name: "ご利用の流れ", href: "/#flow" },
   // { name: "よくある質問", href: "/#qa" },
   // { name: "ご予約・お問い合わせ", href: "/#contact" },
-];
-
-const socialIcons = [
-  // { icon: FacebookLogo, name: "Facebook", href: FACEBOOK_LINK },
-  { icon: InstagramLogo, name: "Instagram", href: INSTAGRAM_LINK },
-  // { icon: TwitterLogo, name: "Twitter", href: TWITTER_LINK },
 ];
 
 export default function Header() {
