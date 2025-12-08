@@ -1,8 +1,8 @@
 export const SITE_NAME = "Hiroki Amano";
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
-export const EMAIL = "info@hiro-web-create.com"
-export const ADDRESS = "東京都練馬区中村南１−２２−１８−４１３";
-export const POST_CODE = "〒176-0025";
+export const EMAIL = "info@hiro-web-create.com";
+export const ADDRESS = "";
+export const POST_CODE = "";
 export const TEL = "080-8259-4089";
 export const FACEBOOK_LINK = "https://www.facebook.com/meguriseitai";
 export const TWITTER_LINK = "https://twitter.com/meguri_seitai";
