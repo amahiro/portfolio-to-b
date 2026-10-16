@@ -1,23 +1,21 @@
-// import Image from "next/image";
-// import Link from "next/link";
 import { Metadata } from "next";
-import Hero from "@/components/content/top/hero";
-// import FeatureSection from "@/components/content/top/feature";
-// import ProblemSection from "@/components/content/top/problem";
-import AboutSection from "@/components/content/top/about";
-import WorksSection from "@/components/content/top/works";
-// import FlowSection from "@/components/content/top/flow";
-// import QaSection from "@/components/content/top/faq";
-import PriceSection from "@/components/content/top/price";
-// import ContactSection from "@/components/content/top/contact";
+import HomeHero from "@/components/content/home/hero";
+import HomeStrength from "@/components/content/home/strength";
+import HomeWorks from "@/components/content/home/works";
+import HomeAbout from "@/components/content/home/about";
+import HomeSkills from "@/components/content/home/skills";
+import HomeCareer from "@/components/content/home/career";
+import HomeAi from "@/components/content/home/ai";
+import HomeEffects, { HomeNoScriptStyle } from "@/components/content/home/home-effects";
+import "@/components/content/home/home.css";
 import { SITE_NAME, SITE_URL } from "@/constants/site-info";
 
-const description = `地域の事業者様向けに、スマホ対応・SEO対策・オリジナルデザインなど、分かりやすく丁寧に低価格でホームページ制作・運用をサポートします。まずはお気軽にご相談ください。`
+const description = `Web制作歴 約5年の天野広揮のポートフォリオです。制作会社・事業会社でコーポレートサイト・LP・ECサイトの制作に携わり、コーディングを軸にCMS構築・UI改善・デザイン・アクセス解析まで対応しています。`;
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} - 地域の集客を支えるWebサイト制作`,
+  title: `${SITE_NAME} - Webサイト制作 ポートフォリオ`,
   description: description,
-  keywords: ["ホームページ制作", "SEO", "Web制作", "運用代行", "オリジナルデザイン", "スマホ対応"],
+  keywords: ["ポートフォリオ", "Web制作", "コーディング", "Next.js", "WordPress", "Tailwind CSS", "Claude Code", "AI駆動開発"],
   openGraph: {
     title: SITE_NAME,
     description: description,
@@ -46,39 +44,19 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": SITE_NAME,
-  "description": description,
-  "url": SITE_URL,
-  "areaServed": "日本",
-  "offers": [
-    "スマホ・タブレット対応",
-    "SEO対策",
-    "オリジナルデザイン",
-    "SSL対応",
-    "運用代行",
-    "保守・更新サポート"
-  ]
-};
-
 export default function Home() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <Hero />
-      {/* <ProblemSection /> */}
-      {/* <FeatureSection /> */}
-      <WorksSection />
-      <AboutSection />
-      <PriceSection />
-      {/* <FlowSection />
-      <QaSection /> */}
-      {/* <ContactSection />  */}
-    </>
+    // スタイルは home.css（.tp の中だけに効く）
+    <div className="tp" id="top">
+      <HomeNoScriptStyle />
+      <HomeHero />
+      <HomeStrength />
+      <HomeWorks />
+      <HomeAi />
+      <HomeCareer />
+      <HomeSkills />
+      <HomeAbout />
+      <HomeEffects />
+    </div>
   );
 }

@@ -4,7 +4,7 @@ import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
 // import Breadcrumb from "@/components/layouts/breadcrumb";
 import SkipLink from "@/components/layouts/skip-link";
-import { notoSansJP, notoSerif } from "@/lib/fonts";
+import { notoSansJP, notoSerif, outfit } from "@/lib/fonts";
 import { SITE_URL } from "@/constants/site-info";
 import GoogleAnalytics from "@/components/analytics/google-analytics";
 
@@ -54,7 +54,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${notoSansJP.variable} ${notoSerif.variable}`}
+      className={`${notoSansJP.variable} ${notoSerif.variable} ${outfit.variable}`}
     >
       <head>
         <meta name="format-detection" content="telephone=no" />
@@ -67,7 +67,7 @@ export default function RootLayout({
           <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID!} />
           <SkipLink />
           <Header />
-          <main className="container mx-auto">
+          <main id="main-content" className="container mx-auto">
             {/* <Breadcrumb /> */}
             {children}
           </main>
