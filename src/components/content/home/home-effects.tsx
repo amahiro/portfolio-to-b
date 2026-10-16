@@ -133,7 +133,7 @@ export default function HomeEffects() {
 
 // JavaScript が無効でも本文が見えるよう、動きの初期状態（透明・ずらし）を打ち消す
 const noScriptStyle =
-  ".tp .js-fade,.tp .js-stagger>*,.tp .ttl__jp,.tp .ttl__en,.tp .works__img img{opacity:1!important;transform:none!important}";
+  ".tp .js-fade,.tp .js-stagger>*,.tp .reason__list.js-stagger>li>*,.tp .ttl__jp,.tp .ttl__en,.tp .works__img img{opacity:1!important;transform:none!important}";
 
 export function HomeNoScriptStyle() {
   return (

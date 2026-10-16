@@ -80,8 +80,8 @@ html:has(.tp){scroll-padding-top:80px}
   .tp .hero{height:auto;min-height:0}
   .tp .hero__inner{padding:64px 20px 56px}
   .tp .hero__en{font-size:12px;margin-bottom:12px}
-  .tp .hero__catch .line:first-child{font-size:4.3vw;line-height:1.6;letter-spacing:.02em;margin-bottom:8px}
-  .tp .hero__catch .line+.line{font-size:5.8vw;line-height:1.5}
+  /* 2行目「デザインとディレクションまで」（14文字）が、どの画面幅でも1行に収まる大きさ */
+  .tp .hero__catch{font-size:calc((100vw - 40px) / 14.8);line-height:1.5;letter-spacing:.02em}
   .tp .hero__lead{font-size:13.5px;margin-top:18px}
   .tp .hero__btns{flex-direction:column;gap:12px;margin-top:28px}
   .tp .hero__btns .btn{height:56px}
@@ -94,9 +94,15 @@ html:has(.tp){scroll-padding-top:80px}
 .tp .reason__list li:first-child{padding-left:0}
 .tp .reason__list li:last-child{padding-right:0}
 .tp .reason__list li+li{border-left:1px solid var(--line)}
+.tp .reason__top{display:flex;align-items:flex-end;justify-content:center;height:150px;margin-bottom:28px}
+.tp .reason__top img{height:100%;width:auto;max-width:100%}
 .tp .reason__num{display:block;font-family:var(--en);font-weight:600;font-size:44px;line-height:1;color:var(--accent)}
 .tp .reason__list h3{font-size:22px;line-height:1.6;margin:20px 0 14px;min-height:70px}
 .tp .reason__list p{font-size:15px;line-height:2;color:var(--ink-sub)}
+/* 強み: イラストは最初から出しておき（ソコストの絵は動かさない）、文字だけ順に出す */
+.tp .reason__list.js-stagger>li{opacity:1;transform:none}
+.tp .reason__list.js-stagger>li>*:not(.reason__top){opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.19,1,.22,1);transition-delay:calc(var(--i,0)*90ms + 150ms)}
+.tp .reason__list.js-stagger.is-in>li>*:not(.reason__top){opacity:1;transform:none}
 @media (max-width:1023px) and (min-width:768px){
   .tp .reason__list li{padding:8px 20px}
   .tp .reason__list h3{font-size:18px}
@@ -107,6 +113,7 @@ html:has(.tp){scroll-padding-top:80px}
   .tp .reason__list li,.tp .reason__list li:first-child,.tp .reason__list li:last-child{padding:26px 0}
   .tp .reason__list li:first-child{padding-top:0}
   .tp .reason__list li+li{border-left:0;border-top:1px solid var(--line)}
+  .tp .reason__top{height:110px;margin-bottom:18px}
   .tp .reason__num{font-size:34px}
   .tp .reason__list h3{font-size:19px;min-height:0;margin:12px 0 10px}
   .tp .reason__list p{font-size:13.5px}
@@ -331,7 +338,7 @@ html:has(.tp){scroll-padding-top:80px}
 }
 @media (prefers-reduced-motion:reduce){
   .tp *,.tp *::before,.tp *::after{animation:none!important;transition:none!important}
-  .tp .js-fade,.tp .js-stagger>*,.tp .ttl__jp,.tp .hero__catch .line>span{opacity:1;transform:none}
+  .tp .js-fade,.tp .js-stagger>*,.tp .reason__list.js-stagger>li>*,.tp .ttl__jp,.tp .hero__catch .line>span{opacity:1;transform:none}
   .tp .ttl__en,.tp .hero__en,.tp .hero__lead,.tp .hero__btns{opacity:1!important}
   .tp .works__img img{opacity:1;transform:none}
   .tp .works__img::after{display:none}
